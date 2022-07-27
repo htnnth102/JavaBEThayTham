@@ -1,0 +1,14 @@
+
+
+1. Select no condition
+    Public List<Object_class> <Method name>() {
+        List<Obj_class> <list_of_obj_name> = ArrayList<>();
+        try {
+            1. Connection con = getConnection(); // Phuong thuc getConeection de ket noi voi JDBC da duoc viet truoc do
+            2. PrepareStatement p = con.prepareStatement(sql_query_String);
+            3. Create ResultSet rs = p.executeQuery();
+            4. insert object into ArrayList
+        }
+        catch Exception
+        return <list_of_obj_name>;
+    }
