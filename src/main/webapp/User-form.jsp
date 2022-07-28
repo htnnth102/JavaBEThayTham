@@ -36,48 +36,50 @@
             <th>Email</th>
             <th>Country</th>
         </tr>
-        <%
-            UserDao ud = new UserDao();
-            List<Users> lstUser = new ArrayList<>();
-            if (countryForSearch == null) {
-               lstUser = ud.SelectAllUsers();
+<%--        DUOI DAY LA DOAN MA CU 40-81--%>
+<%--        <%--%>
+<%--            UserDao ud = new UserDao();--%>
+<%--            List<Users> lstUser = new ArrayList<>();--%>
+<%--            if (countryForSearch == null) {--%>
+<%--               lstUser = ud.SelectAllUsers();--%>
 
-            } else {
-                lstUser = ud.SelectAllUsersByCountry(countryForSearch);
-            }
-            for (Users u : lstUser) {
-        %>
-        <tr>
-            <td><%=u.getId()%></td>
-            <td><%=u.getName()%></td>
-            <td><%=u.getEmail()%></td>
-            <td><%=u.getCountry()%></td>
-        </tr>
-        <%
-            }
-        %>
+<%--            } else {--%>
+<%--                lstUser = ud.SelectAllUsersByCountry(countryForSearch);--%>
+<%--            }--%>
+<%--            for (Users u : lstUser) {--%>
+<%--        %>--%>
+<%--        <tr>--%>
+<%--            <td><%=u.getId()%></td>--%>
+<%--            <td><%=u.getName()%></td>--%>
+<%--            <td><%=u.getEmail()%></td>--%>
+<%--            <td><%=u.getCountry()%></td>--%>
+<%--        </tr>--%>
+<%--        <%--%>
+<%--            }--%>
+<%--        %>--%>
+<%--    </table>--%>
+<%--    <form action="User-form.jsp">--%>
+<%--        <%--%>
+<%--            List<Users> uList = new ArrayList<>();--%>
+<%--            uList = ud.SelectAllUsers();--%>
+<%--            Set<String> country = new TreeSet<>();--%>
+<%--            for (Users u: uList) {--%>
+<%--                country.add(u.getCountry());--%>
+<%--            }--%>
+<%--        %>--%>
+<%--        <select name="country" id="country">--%>
+<%--            <option value="" selected>Chon quoc gia</option>--%>
+<%--            <%--%>
+<%--                for (String c : country) {--%>
+<%--            %>--%>
+<%--            <option value="<%=c%>"><%=c%></option>--%>
+<%--            <%--%>
+<%--                }--%>
+<%--            %>--%>
+<%--        </select>--%>
+<%--        <button type="submit">SEARCH</button>--%>
+<%--    </form>--%>
     </table>
-    <form action="User-form.jsp">
-        <%
-            List<Users> uList = new ArrayList<>();
-            uList = ud.SelectAllUsers();
-            Set<String> country = new TreeSet<>();
-            for (Users u: uList) {
-                country.add(u.getCountry());
-            }
-        %>
-        <select name="country" id="country">
-            <option value="" selected>Chon quoc gia</option>
-            <%
-                for (String c : country) {
-            %>
-            <option value="<%=c%>"><%=c%></option>
-            <%
-                }
-            %>
-        </select>
-        <button type="submit">SEARCH</button>
-    </form>
 
 </body>
 </html>

@@ -1,2 +1,18 @@
 A. JSP tag?
 Các JSP Tag thông dụng
+
+*Lưu ý:
+    - phương thức GET là phương thức mặc định
+    - vD: index.js?id=1 => "id=1" - querystring
+=>  POST: form - bảo mật - dữ liệu đính kèm
+
+B.SERVLET AND SERVLET MAPPING
+    <servlet>
+        <servlet-name>UserServlet</servlet-name>
+        <jsp-file>net.javaguides.user_management.web.UserServlet</jsp-file>
+    </servlet>
+    <!--mapping-->
+    <servlet-mapping>
+        <servlet-name>UserServlet</servlet-name>
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
