@@ -24,7 +24,7 @@ public class UserDao {
     private static final String INSERT_USER_SQL = "Insert into users(name, email, country) values (?,?,?)";
     private static final String UPDATE_USER_SQL = "Update users set name = ? email =? country = ? where id = ?";
     private static final String SELECT_USER_SQL = "select * from users";
-    private static final String DELETE_USER_SQL = "delete users where id = ?";
+    private static final String DELETE_USER_SQL = "delete from users where id = ?";
     private static final String SELECT_USER_ID_SQL = "select * from users where id = ?";
     public UserDao(){};
     public Connection getConnection() {
@@ -120,6 +120,19 @@ public class UserDao {
         }
 
         return users;
+    }
+
+    public boolean DeleteUser(int id) {
+        boolean rowDeleted = false;
+        try {
+            Connection con = getConnection();
+            PreparedStatement pr = con.prepareStatement(DELETE_USER_SQL);
+            pr.setInt(1, id);
+            rowDeleted = pr.executeUpdate() > 0;
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return rowDeleted;
     }
 
 
