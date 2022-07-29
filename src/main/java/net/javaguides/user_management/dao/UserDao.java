@@ -22,7 +22,7 @@ public class UserDao {
     static UserDao ud = new UserDao("jdbc:mysql://localhost:3306/demo?useSSL=false", "root", "motconvit");
 
     private static final String INSERT_USER_SQL = "Insert into users(name, email, country) values (?,?,?)";
-    private static final String UPDATE_USER_SQL = "Update users set name = ? email =? country = ? where id = ?";
+    private static final String UPDATE_USER_SQL = "Update users set name = ?, email =?, country = ? where id = ?";
     private static final String SELECT_USER_SQL = "select * from users";
     private static final String DELETE_USER_SQL = "delete from users where id = ?";
     private static final String SELECT_USER_ID_SQL = "select * from users where id = ?";
@@ -135,6 +135,19 @@ public class UserDao {
         return rowDeleted;
     }
 
+    public void UpdateUser(Users u ) {
+        try {
+            Connection con = getConnection();
+            PreparedStatement pr = con.prepareStatement(UPDATE_USER_SQL);
+            pr.setString(1, u.getName());
+            pr.setString(2, u.getEmail());
+            pr.setString(3, u.getCountry());
+            pr.setInt(4, u.getId());
+            pr.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
 
 
 
