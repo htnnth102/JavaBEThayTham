@@ -17,7 +17,7 @@ public class LoginController extends HttpServlet {
     public LoginController() {
 
     }
-
+    // role == user ->
     public void init(javax.servlet.ServletConfig config) {
         lg = new LoginDAO();
     }
@@ -46,6 +46,7 @@ public class LoginController extends HttpServlet {
             RequestDispatcher rd = request.getRequestDispatcher("Project03/todo/todo.jsp");
 //            forward la url giu nguyen, chi forword noi dung sang
 //            Send Direct la chuyen huong url
+//            role == user -> sendDirect to homepage
             rd.forward(request, response);
         } else {
             response.sendRedirect("Project03/login/login.jsp");
