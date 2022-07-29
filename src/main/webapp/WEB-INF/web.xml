@@ -22,23 +22,34 @@
 <!--        <servlet-name>NServlet</servlet-name>-->
 <!--        <url-pattern>/NServlet</url-pattern>-->
 <!--    </servlet-mapping>-->
-    <servlet>
-            <servlet-name>UserServlet</servlet-name>
-            <servlet-class>net.javaguides.user_management.web.NServlet$UserServlet</servlet-class>
-        </servlet>
-        <!--mapping-->
-        <servlet-mapping>
-            <servlet-name>UserServlet</servlet-name>
-            <url-pattern>/</url-pattern>
-        </servlet-mapping>
+<!--    <servlet>-->
+<!--            <servlet-name>UserServlet</servlet-name>-->
+<!--            <servlet-class>net.javaguides.user_management.web.NServlet$UserServlet</servlet-class>-->
+<!--        </servlet>-->
+<!--        &lt;!&ndash;mapping&ndash;&gt;-->
+<!--        <servlet-mapping>-->
+<!--            <servlet-name>UserServlet</servlet-name>-->
+<!--            <url-pattern>/</url-pattern>-->
+<!--        </servlet-mapping>-->
 
     <servlet>
-        <servlet-name>UserController</servlet-name>
-        <servlet-class>net.javaguides.user_management.web.UserController</servlet-class>
+        <servlet-name>RegisterController</servlet-name>
+        <servlet-class>Project03.Web.RegisterController</servlet-class>
     </servlet>
     <!--mapping-->
     <servlet-mapping>
-        <servlet-name>UserController</servlet-name>
-        <url-pattern>/UserController</url-pattern>
+        <servlet-name>RegisterController</servlet-name>
+        <url-pattern>/register</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>LoginController</servlet-name>
+        <servlet-class>Project03.Web.LoginController</servlet-class>
+    </servlet>
+    <!--mapping-->
+    <servlet-mapping>
+        <servlet-name>LoginController</servlet-name>
+        <url-pattern>/Login</url-pattern>
+    </servlet-mapping>
+
 </web-app>
